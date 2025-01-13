@@ -1,12 +1,12 @@
-import type Elysia from "elysia";
-import { ReviewsController } from "../controllers/reviews.controller";
+import Elysia from "elysia";
+import { getReviews } from "../services/airbnb.service";
 
-const reviewsController = new ReviewsController();
-
-export const reviewsRoutes = (app: Elysia) => {
-	app.get("/reviews/:roomId", async ({ params }) => {
+export const reviewsRoutes = new Elysia().get(
+	"/reviews/:roomId",
+	async ({ params }) => {
 		const { roomId } = params;
-		const reviews = await reviewsController.getReviews(roomId);
+
+		const reviews = await getReviews(roomId);
 		return reviews;
-	});
-};
+	},
+);

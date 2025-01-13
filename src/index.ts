@@ -4,7 +4,7 @@ import { swagger } from "@elysiajs/swagger";
 
 const app = createServer();
 
-reviewsRoutes(app);
+app.use(reviewsRoutes);
 
 app.use(swagger());
 
