@@ -1,0 +1,14 @@
+node_modules
+.git
+.gitignore
+.env*
+**/*.trace
+**/*.zip
+**/*.tar.gz
+**/*.tgz
+**/*.log
+**/*.bun
+.next
+out
+build
+coverage 
